@@ -31,7 +31,10 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Publish
-      run: dotnet publish -c Release -r ${{ matrix.rid }} -p:PublishSingleFile=true --self-contained -o ./publish/${{ matrix.rid }}
+      run: |
+        for proj in $(ls *.csproj); do
+          dotnet publish $proj -c Release -r ${{ matrix.rid }} -p:PublishSingleFile=true --self-contained -o ./publish/${{ matrix.rid }}/$proj
+        done
     # - name: Upload artifact
     #   uses: actions/upload-artifact@v3
     #   with:
