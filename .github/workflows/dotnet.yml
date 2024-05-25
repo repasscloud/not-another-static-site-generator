@@ -13,12 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest]
-        include:
-          - rid: win-x64
-          - rid: win-x86
-          - rid: linux-x64
-          - rid: osx-x64
+        rid: [win-x64, win-x86, linux-x64, osx-x64]
 
     steps:
     - uses: actions/checkout@v4
