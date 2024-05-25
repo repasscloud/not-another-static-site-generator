@@ -11,6 +11,15 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        include:
+          - rid: win-x64
+          - rid: win-x86
+          - rid: linux-x64
+          - rid: osx-x64
+
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET
@@ -21,5 +30,12 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
+    - name: Publish
+      run: dotnet publish -c Release -r ${{ matrix.rid }} -p:PublishSingleFile=true --self-contained -o ./publish/${{ matrix.rid }}
+    # - name: Upload artifact
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: myapp-${{ matrix.rid }}
+    #     path: ./publish/${{ matrix.rid }}
     # - name: Test
     #   run: dotnet test --no-build --verbosity normal
