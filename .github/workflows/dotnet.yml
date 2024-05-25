@@ -35,6 +35,10 @@ jobs:
         for proj in $(ls *.csproj); do
           dotnet publish $proj -c Release -r ${{ matrix.rid }} -p:PublishSingleFile=true --self-contained -o ./publish/${{ matrix.rid }}/$proj
         done
+    - name: Tree
+      run: |
+        sudo apt -y install tree
+        tree
     # - name: Upload artifact
     #   uses: actions/upload-artifact@v3
     #   with:
