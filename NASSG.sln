@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NASSG", "NASSG.csproj", "{728D854F-B4D5-4599-BA33-3B83E6E323CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{728D854F-B4D5-4599-BA33-3B83E6E323CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{728D854F-B4D5-4599-BA33-3B83E6E323CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{728D854F-B4D5-4599-BA33-3B83E6E323CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{728D854F-B4D5-4599-BA33-3B83E6E323CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D95DF266-D49F-4A76-B409-8402B4834D56}
+	EndGlobalSection
+EndGlobal
