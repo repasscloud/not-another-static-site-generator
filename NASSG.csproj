@@ -14,4 +14,12 @@
     <PackageReference Include="Tomlyn" Version="0.17.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Exclude the 'source' and 'themes' folders -->
+    <Compile Remove="source\**" />
+    <Compile Remove="themes\**" />
+    <Content Remove="source\**" />
+    <Content Remove="themes\**" />
+  </ItemGroup>
+
 </Project>
