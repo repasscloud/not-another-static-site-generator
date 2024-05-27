@@ -14,6 +14,7 @@
 *.sln.docstates
 lost_chat
 config.toml
+test.toml
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
