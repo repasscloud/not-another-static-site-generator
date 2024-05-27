@@ -4,6 +4,6 @@ public static class VersionCommand
 {
     public static void Execute()
     {
-        Console.WriteLine($"Version: {AppConfig.AppVersion}");
+        Console.WriteLine($"Version: {AppConfig.appVersion}");
     }
 }

@@ -12,14 +12,18 @@ public static class CommandDispatcher
         return AppConfig.Commands.Contains(command);
     }
 
-    public static void DispatchCommand(string command)
+    public static void DispatchCommand(string command, string[] args)
     {
+
+        // ensure args is not null
+        args ??= Array.Empty<string>();
+
         command = command.ToLower();
 
         switch (command)
         {
             case "build":
-                BuildCommand.Execute();
+                BuildCommand.Execute(args);  // build command needs args, for processing after config.toml
                 break;
             case "config":
                 ConfigCommand.Execute();

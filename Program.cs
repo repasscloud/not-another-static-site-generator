@@ -19,30 +19,32 @@ class Program
             return;
         }
 
-        // Check and dispatch flags
-        for (int i = 1; i < args.Length; i++)
-        {
-            if (FlagDispatcher.CheckFlag(args[i]))
-            {
-                if (i + 1 < args.Length && !FlagDispatcher.CheckFlag(args[i + 1]))
-                {
-                    FlagDispatcher.DispatchFlag(args[i], args[i + 1]);
-                    i++; // Skip the next argument as it is used as a parameter for the current flag
-                }
-                else
-                {
-                    FlagDispatcher.DispatchFlag(args[i], null);
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Unknown flag: {args[i]}");
-            }
-        }
+        // this code needs to go into each Command function instead (where it's needed)
+        // // check and dispatch flags
+        // for (int i = 1; i < args.Length; i++)
+        // {
+        //     if (FlagDispatcher.CheckFlag(args[i]))
+        //     {
+        //         if (i + 1 < args.Length && !FlagDispatcher.CheckFlag(args[i + 1]))
+        //         {
+        //             FlagDispatcher.DispatchFlag(args[i], args[i + 1]);
+        //             i++; // skip the next argument as it is used as a parameter for the current flag
+        //         }
+        //         else
+        //         {
+        //             FlagDispatcher.DispatchFlag(args[i], null);
+        //         }
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine($"Unknown flag: {args[i]}");
+        //     }
+        // }
 
-        CommandDispatcher.DispatchCommand(args[0]);
+        CommandDispatcher.DispatchCommand(args[0], args.Skip(1).ToArray());
 
-        Console.WriteLine(AppConfig.CurrentDirectory);
+
+        Console.WriteLine(AppConfig.currentDirectory);
 
 
 //         // // use githelper library to get commit info
