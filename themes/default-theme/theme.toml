@@ -1,0 +1,52 @@
+[theme]
+name = 'default-theme'
+license = 'MIT'
+licenseLink = ''
+description = ''
+homepage = ''
+min_version = '0.0.1'
+
+[author]
+name = 'NASSG'
+homepage = 'https://nassg.github.io'
+
+[Site]
+[Site.Params]
+mainMenuLogo = "https://test.com/image.png"
+
+[assets]
+css = ['bootstrap-5.3.3.css']
+js = ['bootstrap-5.3.3.js']
+
+[pages]
+index = 'index.html'
+about = 'about.html'
+services = 'services.html'
+blog = 'blog.html'
+portfolio = 'portfolio.html'
+contact = 'contact.html'
+404 = '404.html'
+faq = 'faq.html'
+privacy_policy = 'privacy_policy.html'
+terms_of_service = 'terms_of_service.html'
+testimonials = 'testimonials.html'
+gallery = 'gallery.html'
+sitemap = 'sitemap.html'
+team = 'team.html'
+careers = 'careers.html'
+press = 'press.html'
+events = 'events.html'
+resources = 'resources.html'
+support = 'support.html'
+coming_soon = 'coming-soon.html'
+
+[partials]
+header = 'partials/header.html'
+footer = 'partials/footer.html'
+
+[blocks]
+hero = 'blocks/hero.html'
+navigation = 'blocks/navigation.html'
+article = 'blocks/article.html'
+faq = 'blocks/faq.html'
+404 = 'blocks/404.html'
