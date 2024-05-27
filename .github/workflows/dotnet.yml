@@ -2,7 +2,7 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "dev" ]
   pull_request:
     branches: [ "main" ]
 
@@ -30,10 +30,6 @@ jobs:
         for proj in $(ls *.csproj); do
           dotnet publish $proj -c Release -r ${{ matrix.rid }} -p:PublishSingleFile=true --self-contained -p:DebugSymbols=false -o ./publish/${{ matrix.rid }}
         done
-    - name: Tree
-      run: |
-        sudo apt -y install tree
-        tree
     # - name: Upload artifact
     #   uses: actions/upload-artifact@v3
     #   with:
