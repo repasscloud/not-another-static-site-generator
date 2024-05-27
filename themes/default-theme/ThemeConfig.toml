@@ -1,0 +1,116 @@
+# ThemeConfig.toml
+
+name = "Default Theme"
+version = "1.0.0"
+author = "NASSG Default Theme"
+license = "MIT"
+min_version = "0.0.1"
+
+[Site]
+Title = "My Awesome Website"
+Home = { RelPermalink = "/" }
+Copyright = "© 2024 My Awesome Website"
+
+[Site.Params]
+mainMenuLogo = "https://example.com/logo.png"
+theme = "light"
+footerText = "© 2024 My Awesome Website"
+
+[[Site.Params.Menu]]
+Name = "Home"
+URL = "/"
+
+[[Site.Params.Menu]]
+Name = "About"
+URL = "/about"
+
+[[Site.Params.Menu]]
+Name = "Services"
+URL = "/services"
+
+  [[Site.Params.Menu.submenu]]
+  Name = "Consulting"
+  URL = "/services/consulting"
+
+  [[Site.Params.Menu.submenu]]
+  Name = "Development"
+  URL = "/services/development"
+
+  [[Site.Params.Menu.submenu]]
+  Name = "Design"
+  URL = "/services/design"
+  
+[[Site.Params.Menu]]
+Name = "Blog"
+URL = "/blog"
+
+[[Site.Params.Menu]]
+Name = "Contact"
+URL = "/contact"
+
+[[Site.Menus.footer]]
+Name = "Privacy Policy"
+URL = "/privacy-policy"
+
+[[Site.Menus.footer]]
+Name = "Terms of Service"
+URL = "/terms-of-service"
+
+[Partials]
+header = "partials/header.html"
+footer = "partials/footer.html"
+
+
+
+# [theme]
+# name = 'default-theme'
+# license = 'MIT'
+# licenseLink = ''
+# description = ''
+# homepage = ''
+# min_version = '0.0.1'
+
+# [author]
+# name = 'NASSG'
+# homepage = 'https://nassg.github.io'
+
+# [Site]
+# [Site.Params]
+# mainMenuLogo = "https://test.com/image.png"
+
+# [assets]
+# css = ['bootstrap-5.3.3.css']
+# js = ['bootstrap-5.3.3.js']
+
+# [pages]
+# index = 'index.html'
+# about = 'about.html'
+# services = 'services.html'
+# blog = 'blog.html'
+# portfolio = 'portfolio.html'
+# contact = 'contact.html'
+# 404 = '404.html'
+# faq = 'faq.html'
+# privacy_policy = 'privacy_policy.html'
+# terms_of_service = 'terms_of_service.html'
+# testimonials = 'testimonials.html'
+# gallery = 'gallery.html'
+# sitemap = 'sitemap.html'
+# team = 'team.html'
+# careers = 'careers.html'
+# press = 'press.html'
+# events = 'events.html'
+# resources = 'resources.html'
+# support = 'support.html'
+# coming_soon = 'coming-soon.html'
+
+# [partials]
+# header = 'partials/header.html'
+# footer = 'partials/footer.html'
+
+# [blocks]
+# hero = 'blocks/hero.html'
+# navigation = 'blocks/navigation.html'
+# article = 'blocks/article.html'
+# faq = 'blocks/faq.html'
+# 404 = 'blocks/404.html'
