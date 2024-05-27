@@ -15,6 +15,7 @@ Copyright = "© 2024 My Awesome Website"
 mainMenuLogo = "https://example.com/logo.png"
 theme = "light"
 footerText = "© 2024 My Awesome Website"
+facebookPixel = "your-facebook-pixel-id"
 
 [[Site.Params.Menu]]
 Name = "Home"
@@ -59,6 +60,7 @@ URL = "/terms-of-service"
 [Partials]
 header = "partials/header.html"
 footer = "partials/footer.html"
+
 
 
 

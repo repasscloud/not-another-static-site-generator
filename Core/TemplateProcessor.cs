@@ -12,6 +12,7 @@ public static class TemplateProcessor
         var elseRegex = new Regex(@"{{\s*else\s*}}", RegexOptions.Compiled);
         var rangeRegex = new Regex(@"{{\s*range\s+\.(\w+(\.\w+)*)\s*}}(.*?){{\s*end\s*}}", RegexOptions.Singleline | RegexOptions.Compiled);
         var includeRegex = new Regex(@"{{\s*include\s+""(.*?)""\s*}}", RegexOptions.Compiled);
+        var conditionalIncludeRegex = new Regex(@"{{\s*include\s+""(.*?)""\s*if\s+isset\s+\.(\w+(\.\w+)*)\s*}}", RegexOptions.Compiled);
         var setRegex = new Regex(@"{{\s*set\s+\$(\w+)\s*=\s*(\.(\w+(\.\w+)*))\s*}}", RegexOptions.Compiled);
 
         // Handle includes
@@ -24,6 +25,19 @@ public static class TemplateProcessor
                 return ProcessTemplate(includeContent, model, variables);
             }
             return $"<!-- Include not found: {includePath} -->";
+        });
+
+        // Handle conditional includes
+        templateContent = conditionalIncludeRegex.Replace(templateContent, match =>
+        {
+            var includePath = match.Groups[1].Value;
+            var condition = match.Groups[2].Value;
+            if (Utility.IsVariableSet(model, condition) && File.Exists(includePath))
+            {
+                var includeContent = File.ReadAllText(includePath);
+                return ProcessTemplate(includeContent, model, variables);
+            }
+            return string.Empty;
         });
 
         // Handle set variables
