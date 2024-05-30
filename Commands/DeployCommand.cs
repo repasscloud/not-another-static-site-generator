@@ -1,3 +1,5 @@
+using System;
+
 namespace NASSG.Commands;
 
 public static class DeployCommand

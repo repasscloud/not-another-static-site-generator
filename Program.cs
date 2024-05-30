@@ -4,6 +4,8 @@ using Tomlyn.Model;
 using NASSG.Plugins.Default;
 using NASSG.Helpers;
 using NASSG.Commands;
+using System;
+using System.Linq;
 
 namespace NASSG;
 
